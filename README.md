@@ -23,3 +23,4 @@ firefox localhost:8080
 * Rick as a gif while loading (if the internet is slow you still know what hit you)
 * Fallback to gif for browsers without js enabled
 * Fullscreen
+* Small square in the right bottom corner to pause and mute, for the initiated
