@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Definitely not a rickroll</title>
+    <link rel="icon" type="image/png" href="/favicon-32x32.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+</head>
+
+<body style="overflow: hidden; touch-action: manipulation; cursor: pointer; background-color: black">
+    <noscript><img id="loader" src="./rick.gif" style="position: absolute; top: 0; left:0; width: 100vw; height: auto; display: block" /></noscript>
+    <img id="pause" src='./pause.png'
+         style="position: absolute; scale: 0.3; filter: invert(100%); top: min(37.5vw, 50vh); left:50vw; transform: translate(-50%, -50%); transform-origin: 0 0; z-index: 100;" />
+    <div style="position: absolute; width: 100%; top: min(37.5vw, 50vh); left:50vw; ">
+        <video id="video" autoplay muted loop playsinline style="width: 100%; height: auto; display: none; transform: translate(-50%, -50%); transform-origin: 0 0;">
+            <source src='./rick.mp4' type="video/mp4">
+            <img src='./rick.gif' />
+        </video>
+        <img id="loader" src="./rick.gif" style="width: 100%; height: auto; display: block; transform: translate(-50%, -50%); transform-origin: 0 0;" />
+      
+    </div>
+    <div id='panic' style="position: absolute; bottom: 0; right: 0; width: 20px; height: 20px; background-color: #111">
+    </div>
+    <script>
+        var video = document.getElementById("video");
+        var pause = document.getElementById("pause");
+
+        document.addEventListener("click", () => {
+            video.muted = false;
+            pause.style.display = 'none';
+            video.play();
+        });
+
+        function showVideo() {
+            console.log("can play through");
+            loader.style.display = "none";
+            video.style.display = "block";
+            video.play();
+        };
+
+        video.addEventListener("playing", showVideo);
+        video.addEventListener("canplay", showVideo);
+
+        var panic = document.getElementById("panic");
+
+        panic.addEventListener("click", (e) => {
+            console.log('hi');
+            video.muted = true;
+            video.pause();
+            e.stopPropagation();
+        });
+    </script>
+</body>
+
+</html>
