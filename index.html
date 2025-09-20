@@ -32,7 +32,7 @@
         var video = document.getElementById("video");
         var pause = document.getElementById("pause");
 
-        document.addEventListener("click", () => {
+        video.addEventListener("click", () => {
             video.muted = false;
             pause.style.display = 'none';
             video.play();
