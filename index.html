@@ -9,8 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   </head>
 
-  <body style="overflow: hidden; touch-action: manipulation; cursor: pointer; background-color: black">
-    <div id='wrapper' style="width: 100%; height: 100%;">
+  <body style="overflow: hidden; touch-action: manipulation; cursor: pointer; background-color: black; margin: 0">
+    <div id='wrapper' style="width: 100vw; height: 100vh;">
       <noscript><img id="loader" src="/assets/rick.gif"
                      style="position: absolute; top: 0; left:0; width: 100vw; height: auto; display: block" /></noscript>
       <img id="pause" src='/assets/pause.png'
@@ -32,8 +32,9 @@
     <script>
       var video = document.getElementById("video");
       var pause = document.getElementById("pause");
+      var wrapper = document.getElecentById("wrapper");
 
-      video.addEventListener("click", () => {
+      wrapper.addEventListener("click", () => {
       video.muted = false;
       pause.style.display = 'none';
       video.play();
