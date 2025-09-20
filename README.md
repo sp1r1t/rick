@@ -24,3 +24,9 @@ firefox localhost:8080
 * Fallback to gif for browsers without js enabled
 * Fullscreen
 * Small square in the right bottom corner to pause and mute, for the initiated
+
+## Live Demo
+
+You can find the live demo here:
+
+https://rick.jinn.at
