@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
     <script defer data-domain="rick.jinn.at" src="https://plausible.jinn.at/js/script.outbound-links.tagged-events.js"></script>
 
@@ -8,54 +7,55 @@
     <title>Definitely not a rickroll</title>
     <link rel="icon" type="image/png" href="/assets/favicon-32x32.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-</head>
+  </head>
 
-<body style="overflow: hidden; touch-action: manipulation; cursor: pointer; background-color: black">
-    <noscript><img id="loader" src="/assets/rick.gif"
-            style="position: absolute; top: 0; left:0; width: 100vw; height: auto; display: block" /></noscript>
-    <img id="pause" src='/assets/pause.png'
-        style="position: absolute; scale: 0.3; filter: invert(100%); top: min(37.5vw, 50vh); left:50vw; transform: translate(-50%, -50%); transform-origin: 0 0; z-index: 100;" />
-    <div style="position: absolute; width: 100%; top: min(37.5vw, 50vh); left:50vw; ">
+  <body style="overflow: hidden; touch-action: manipulation; cursor: pointer; background-color: black">
+    <div id='wrapper' style="width: 100%; height: 100%;">
+      <noscript><img id="loader" src="/assets/rick.gif"
+                     style="position: absolute; top: 0; left:0; width: 100vw; height: auto; display: block" /></noscript>
+      <img id="pause" src='/assets/pause.png'
+           style="position: absolute; scale: 0.3; filter: invert(100%); top: min(37.5vw, 50vh); left:50vw; transform: translate(-50%, -50%); transform-origin: 0 0; z-index: 100;" />
+      <div style="position: absolute; width: 100%; top: min(37.5vw, 50vh); left:50vw; ">
         <video id="video" autoplay muted loop playsinline
-            style="width: 100%; height: auto; display: none; transform: translate(-50%, -50%); transform-origin: 0 0;">
-            <source src='/assets/rick.mp4' type="video/mp4">
-            <img src='/assets/rick.gif' />
+               style="width: 100%; height: auto; display: none; transform: translate(-50%, -50%); transform-origin: 0 0;">
+          <source src='/assets/rick.mp4' type="video/mp4">
+          <img src='/assets/rick.gif' />
         </video>
         <img id="loader" src="/assets/rick.gif"
-            style="width: 100%; height: auto; display: block; transform: translate(-50%, -50%); transform-origin: 0 0;" />
+             style="width: 100%; height: auto; display: block; transform: translate(-50%, -50%); transform-origin: 0 0;" />
 
+      </div>
     </div>
-      <!-- <button class="some-existing-class " style="position: absolute; left: 0; top: 0;">Click Me</button> -->
+    <!-- <button class="some-existing-class " style="position: absolute; left: 0; top: 0;">Click Me</button> -->
     <div id='panic' style="position: absolute; bottom: 0; right: 0; width: 20px; height: 20px; background-color:#111" class="plausible-event-name=Button+Click">
     </div>
     <script>
-        var video = document.getElementById("video");
-        var pause = document.getElementById("pause");
+      var video = document.getElementById("video");
+      var pause = document.getElementById("pause");
 
-        video.addEventListener("click", () => {
-            video.muted = false;
-            pause.style.display = 'none';
-            video.play();
-        });
+      video.addEventListener("click", () => {
+      video.muted = false;
+      pause.style.display = 'none';
+      video.play();
+      });
 
-        function showVideo() {
-            loader.style.display = "none";
-            video.style.display = "block";
-            video.play();
-        };
+      function showVideo() {
+      loader.style.display = "none";
+      video.style.display = "block";
+      video.play();
+      };
 
-        video.addEventListener("playing", showVideo);
-        video.addEventListener("canplay", showVideo);
+      video.addEventListener("playing", showVideo);
+      video.addEventListener("canplay", showVideo);
 
-        var panic = document.getElementById("panic");
+      var panic = document.getElementById("panic");
 
-        panic.addEventListener("click", (e) => {
-            video.muted = true;
-            video.pause();
-           // e.stopPropagation();
-        });
+      panic.addEventListener("click", (e) => {
+      video.muted = true;
+      video.pause();
+      });
     </script>
-</body>
+  </body>
 
 </html>
 
